@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table style="width:100%">
+  <tr>
+    <th>Transaction Date</th>
+    <th>Stock Symbol</th>
+    <th>Buy/Sell Price</th>
+    <th>Change in Shares</th>
+    <th>Change in Cash</th>
+  </tr>
+  {% for stock in stocks %}
+  <tr>
+    <td>{{stock['date']}}</td>
+    <td>{{stock['symbol']}}</td>
+    <td>${{stock['price']}}</td>
+    <td>{{stock['amount']}}</td>
+    <td>${{stock['total']}}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
